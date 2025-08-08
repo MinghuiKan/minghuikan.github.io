@@ -122,19 +122,13 @@ References:
 </style>
 </head>
 <body>
-<audio id="bgm" src="sound/222448__waveplaysfx__synth-pad-deep-ambience-with-beach-waves.mp3" preload="auto" loop playsinline></audio>
+<!-- 背景音乐：静音自动播放 + 循环 + 移动端内联播放 -->
+<audio id="bgm"
+       src="sound/2224488_waveplaysfx_synth-pad-deep-ambience-with-beach-waves.mp3"
+       preload="auto" loop muted playsinline></audio>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const audio = document.getElementById('bgm');
-    audio.play().catch(() => {
-        // 如果被拦截，就监听一次点击再播放
-        document.body.addEventListener('click', () => {
-            audio.play();
-        }, { once: true });
-    });
-});
-</script>
+<!-- 声音开关（可选） -->
+<button id="sound-toggle" aria-label="Toggle sound" title="Sound off">🔇 Sound</button>
 
 <header>
  
