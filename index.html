@@ -122,13 +122,24 @@ References:
 </style>
 </head>
 <body>
+<button id="enable-audio">Enable Sound</button>
 
-<audio id="bgm"
-       src="sound/2224488_waveplaysfx_synth-pad-deep-ambience-with-beach-waves.mp3"
-       preload="auto" loop muted playsinline></audio>
+<audio id="bg-music"
+       src="sound/2224448_waveplaysfx_synth-pad-deep-ambience-with-beach-waves.mp3"
+       preload="auto" loop playsinline></audio>
 
-
-<button id="sound-toggle" aria-label="Toggle sound" title="Sound off">🔇 Sound</button>
+<script>
+  function startBgm(){
+    const a = document.getElementById('bg-music');
+    if (!a) return;
+    a.muted = false;
+    a.volume = 0.6;
+    a.play().catch(console.warn);
+  }
+  document.getElementById('enable-audio').addEventListener('click', startBgm);
+  document.addEventListener('click', startBgm, { once:true });
+  document.addEventListener('touchstart', startBgm, { once:true });
+</script>
 
 <header>
  
