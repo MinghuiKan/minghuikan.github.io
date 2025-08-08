@@ -122,8 +122,19 @@ References:
 </style>
 </head>
 <body>
+<audio id="bgm" src="sound/222448__waveplaysfx__synth-pad-deep-ambience-with-beach-waves.mp3" preload="auto" loop playsinline></audio>
 
-<audio id="bg-music" src="sound/222448__waveplaysfx__synth-pad-deep-ambience-with-beach-waves.mp3" autoplay loop></audio>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const audio = document.getElementById('bgm');
+    audio.play().catch(() => {
+        // 如果被拦截，就监听一次点击再播放
+        document.body.addEventListener('click', () => {
+            audio.play();
+        }, { once: true });
+    });
+});
+</script>
 
 <header>
  
