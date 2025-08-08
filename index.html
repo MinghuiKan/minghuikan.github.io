@@ -1,0 +1,317 @@
+<!-- 
+References:
+
+1. Rose, N. (1999). Powers of freedom: Reframing political thought. Cambridge university press.
+
+2. Assmann, A., & Shortt, L. (2012). Memory and political change: Introduction. In Memory and political change (pp. 1-14). London: Palgrave Macmillan UK.
+   
+
+3. Drobnick, J., & Fisher, J. (2012). Introduction: Sensory Aesthetics. The Senses and Society, 7(2), 133–134. https://doi.org/10.2752/174589312X13276628771406
+
+
+4. Campeau, S., Falls, W. A., & Cullinan, W. Picard, RW (1997), Affective Computing. Cambridge.  
+   
+
+5. Huyssen, A. (2003). Present pasts: Urban palimpsests and the politics of memory. Stanford University Press.
+ 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unfolded: Kara’s Memory Rebellion</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Georgia', serif;
+        background-color: #0e0e0e;
+        color: #f1f1f1;
+        line-height: 1.8;
+        overflow-x: hidden;
+    }
+    header {
+        background: rgba(10, 10, 10, 0.85);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 15px 40px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #333;
+        box-sizing: border-box;
+    }
+    header h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        color: #fdfdfd;
+        margin: 0;
+    }
+    nav a {
+        color: #bbb;
+        margin:  10px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    nav a:hover {
+        color: #fff;
+    }
+    section {
+        padding: 120px 12% 120px 12%;
+        min-height: 100vh;
+        position: relative;
+    }
+    h2 {
+        font-size: 26px;
+        color: #ffcc88;
+        margin-bottom: 20px;
+    }
+    .floating-memory {
+        position: absolute;
+        animation: float 25s linear infinite;
+        opacity: 0.12;
+    }
+    @keyframes float {
+        from {transform: translateY(0px) rotate(0deg);}
+        to {transform: translateY(-2000px) rotate(360deg);}
+    }
+    .emotion-zone {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.emotion-color {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.emotion-color:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+
+.red    { background-color: #e74c3c; }
+.blue   { background-color: #3498db; }
+.green  { background-color: #2ecc71; }
+.yellow { background-color: #f1c40f; }
+.purple { background-color: #9b59b6; }
+
+#emotion-display {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 0px 3px black;
+}
+  #news-preview {
+    animation: fadeIn 1.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<audio id="bg-music" src="sound/222448__waveplaysfx__synth-pad-deep-ambience-with-beach-waves.mp3" autoplay loop></audio>
+
+<header>
+ 
+  <h1 class="main-title">Kara’s Memory Rebellion</h1>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#video-section">Live Recording</a>
+    <a href="#emotions">Emotion Zones</a>
+    <a href="#Kara’s Discovery">Kara’s Discovery</a>
+    <a href="#news-preview">News Leak</a>
+    <a href="#outside-zone">Kara’s Escape</a>
+    <a href="#memory-delete">Memory Archive</a>
+    <a href="#decision">Make a Choice</a>
+  </nav>
+</header>
+
+
+<img src="images/1.JPG" class="floating-memory" style="top:50%; left:5%; width:200px;">
+<img src="images/2.JPG" class="floating-memory" style="top:80%; left:60%; width:250px;">
+<img src="images/3.JPG" class="floating-memory" style="top:120%; left:30%; width:180px;">
+<img src="images/1.JPG" class="floating-memory" style="top:150%; left:80%; width:220px;">
+<img src="images/3.JPG" class="floating-memory" style="top:170%; left:90%; width:200px;">
+<img src="images/4.JPG" class="floating-memory" style="top:200%; left:10%; width:200px;">
+<img src="images/2.JPG" class="floating-memory" style="top:250%; left:70%; width:250px;">
+<img src="images/1.JPG" class="floating-memory" style="top:300%; left:40%; width:180px;">
+<img src="images/4.JPG" class="floating-memory" style="top:350%; left:20%; width:220px;">
+<img src="images/3.JPG" class="floating-memory" style="top:400%; left:90%; width:200px;">
+<img src="images/1.JPG" class="floating-memory" style="top:450%; left:50%; width:250px;">
+<img src="images/4.JPG" class="floating-memory" style="top:480%; left:10%; width:200px;">
+<img src="images/2.JPG" class="floating-memory" style="top:500%; left:30%; width:180px;">
+<img src="images/3.JPG" class="floating-memory" style="top:550%; left:80%; width:220px;">
+<img src="images/1.JPG" class="floating-memory" style="top:580%; left:60%; width:200px;">
+<img src="images/4.JPG" class="floating-memory" style="top:600%; left:10%; width:200px;">
+<img src="images/2.JPG" class="floating-memory" style="top:650%; left:70%; width:250px;">
+<img src="images/4.JPG" class="floating-memory" style="top:670%; left:80%; width:250px;">
+<img src="images/3.JPG" class="floating-memory" style="top:700%; left:40%; width:180px;">
+<img src="images/1.JPG" class="floating-memory" style="top:750%; left:20%; width:220px;">
+<img src="images/4.JPG" class="floating-memory" style="top:780%; left:60%; width:200px;">
+<img src="images/2.JPG" class="floating-memory" style="top:800%; left:90%; width:200px;">
+<img src="images/3.JPG" class="floating-memory" style="top:850%; left:50%; width:250px;">
+<img src="images/1.JPG" class="floating-memory" style="top:880%; left:10%; width:180px;">
+<img src="images/1.JPG" class="floating-memory" style="top:900%; left:30%; width:180px;">
+<img src="images/2.JPG" class="floating-memory" style="top:920%; left:40%; width:220px;">
+<img src="images/3.JPG" class="floating-memory" style="top:940%; left:70%; width:200px;">
+<img src="images/2.JPG" class="floating-memory" style="top:970%; left:10%; width:200px;">
+
+
+<section id="intro">
+    <p>
+        <strong>Kara M.</strong> is a licensed memory evaluator who has worked within the Neural Environment Zone for nearly a decade. Her role was to assist citizens in calibrating their emotional states through the <em>Folded Cognition Architecture</em> (FCA). She followed all protocols and believed in the therapeutic intent of the system — until recently.
+        But behind the harmony lies an invisible system of memory regulation — a system that trims, edits, and sometimes erases the very essence of who people are.
+    </p >
+    <p>
+        Every Thursday at 9:00 AM, Kara walked the same route to Lighthouse 3. She wore her government-issued Emotion Quota Band and never carried a phone. The FCA terminal scanned her biometric indicators and assigned her a calibration session, most often directing her to the <em>“Blue Zone”</em> for low mood regulation. These sessions included visual entrainment and exposure to regulated memory playback.
+    </p >
+    <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="images/IMG_4176.JPG" alt="Lighthouse" class="faded-img" />
+    </div>
+    <div class="flip-card-back">
+      <p>Kara’s walk to Lighthouse 3 every Thursday...</p >
+    </div>
+  </div>
+</section>
+
+
+<section id="video-section">
+    <h2>🎥 Live from the Calibration Zone</h2>
+    <p>
+        What does memory folding look like? In this exclusive footage, recorded with Kara’s permission, you’ll see the delicate choreography between the ocean’s rhythm and the beacon’s pulses.  
+        The process seems gentle — almost beautiful. But beauty can be a mask.
+    </p >
+    <div class="video-wrapper">
+    <video controls poster="video-placeholder.jpg">
+        <source src="video/7月29日1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    </div>
+</section>
+
+
+<section id="emotions">
+    <h2>🎨 Emotional Zoning Index</h2>
+    <p>
+        In FCA’s neural architecture, every memory is color-coded. Hover over each square to feel the subtle shift — red for grief, blue for calmness, yellow for joy, green for hope, purple for nostalgia.  
+        These colors aren’t just decoration; they’re part of the city’s algorithm for categorizing, and sometimes suppressing, emotional states.
+    </p >
+    <div class="emotion-zone">
+        <div class="emotion-color red"    data-emotion="Passion / Anger"></div>
+        <div class="emotion-color blue"   data-emotion="Calm / Sadness"></div>
+        <div class="emotion-color green"  data-emotion="Growth / Envy"></div>
+        <div class="emotion-color yellow" data-emotion="Happiness / Anxiety"></div>
+        <div class="emotion-color purple" data-emotion="Mystery / Nostalgia"></div>
+    </div>
+
+    
+    <div id="emotion-display"></div>
+</section>
+
+
+<section id="Kara’s Discovery">
+    <h2>🧠 Fading Voices, Folded Truths</h2>
+    <p>
+        In her latest session, Kara experienced something unexpected. As images of her mother’s final days began to surface, she noticed that her mother’s voice was missing. Not distorted — erased. The memory played like a silent video, emotionally hollow. She checked the session logs afterward, but found no record of audio suppression.
+    </p >
+    <p>
+       Kara began keeping handwritten notes outside the system. She recorded inconsistencies, memory gaps, and emotional dullness after calibration. Over several weeks, she noticed a pattern: emotionally complex memories — especially those tied to grief, guilt, or loss — were gradually being “folded” into simplified versions. The original texture was gone.
+    </p >
+    <p>
+       Eventually, she decided to document her experience using a voice recorder smuggled into the calibration zone — a risky act of defiance. One of those recordings was later leaked to the Coastal News Network via an encrypted package.
+    </p >
+    <p>In the recording, Kara’s voice is steady but strained:
+       <em>“They told us this was therapy. But it’s not healing — it’s rewriting. I watched my own reflection in the calibration glass fade, like a photograph bleaching in the sun. I didn’t lose my sadness. I lost myself.”</em></p>
+     <audio controls class="leak-audio">
+        <source src="sound/8月2日.MP3" type="audio/MP3">
+    </audio>
+</div>
+</section>
+
+<section id="news-preview">
+  <h2>📰 Memory Leak Reported</h2>
+  <p>
+    On the morning of June 12, 2051, the independent outlet <strong>Coastal News Network</strong> reported a startling leak from inside the FCA system. A package containing system logs, audio recordings, and internal training documents was delivered to their newsroom anonymously. At the center of this leak — Kara’s own calibration data and voice.
+  </p>
+
+  <p>
+    The network has since launched a full investigation. To read the full report, click below:
+  </p>
+
+  <button onclick="window.open('popup.html', '_blank')" style="padding: 10px 20px; background: #00567a; color: white; border: none; cursor: pointer;">
+    🔍 View Full Report
+  </button>
+</section>
+
+<section id="outside-zone">
+    <h2>🌊 Crossing the Threshold</h2>
+    <p>
+        On June 5th, She traveled outside the Neural Zone under the pretext of collecting atmospheric data. What she found beyond the beacons shocked her: an unregulated space where people retained their unaltered emotional memories. She met with a small community of “memory keepers” who preserve physical photographs and handwritten journals — evidence that memory need not be optimized to have value.
+    </p >
+    <p>
+        Returning to the city, Kara smuggled a physical archive of her own memories back into the zone — photos, voice recordings, old letters. These were technically illegal under FCA policy. She faced a dilemma: whether to return to her calibration schedule and remain silent, or to leak her findings and expose the consequences of synthetic emotional control.
+    </p >
+</section>
+
+
+<section id="memory-delete">
+    <h2>🖼️ The Vanishing Archive</h2>
+    <p>
+        Below is a recovered fragment of Kara’s personal memory archive.  
+        Each image represents a memory she feared losing. Touch them — and see how quickly they can be erased.
+    </p >
+    <div style="display:flex;flex-wrap:wrap;gap:20px;">
+        <img src="images/微信图片_20250802212242_50.jpg" style="width:200px;cursor:pointer;" onclick="this.style.opacity='0';this.style.transition='opacity 1s';">
+        <img src="images/微信图片_20250802212243_49.jpg" style="width:200px;cursor:pointer;" onclick="this.style.opacity='0';this.style.transition='opacity 1s';">
+        <img src="images/微信图片_20250802212242_51.jpg" style="width:200px;cursor:pointer;" onclick="this.style.opacity='0';this.style.transition='opacity 1s';">
+    </div>
+</section>
+
+
+<section id="decision">
+    <h2>⚖️ The Choice Ahead</h2>
+    <p>
+        By mid-June, Kara faced a decision that could alter not only her life but the city’s perception of FCA forever:  </p >
+    <p> 1) Return to her calibration schedule, sealing away her doubts.  </p>
+    <p> 2) Join the memory keepers, risking exile.  </p>  
+    <p> 3) Leak the evidence to every citizen, forcing a reckoning.  
+    </p >
+    <button onclick="showDecisionPopup()">Choose Kara’s Path</button>
+</section>
+
+
+<div id="decision-popup" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);color:#fff;z-index:2000;padding:40px;box-sizing:border-box;">
+    <h2>Your Choice for Kara</h2>
+    <p>Do you want her to return, to rebel, or to reveal the truth?</p >
+    <button onclick="alert('Kara returns to the Zone. Her memories fade, but her life remains safe.')">Return</button>
+    <button onclick="alert('Kara joins the memory keepers. She lives free, but hunted.')">Rebel</button>
+    <button onclick="alert('Kara leaks the evidence. The city wakes, but the system strikes back.')">Reveal</button>
+    <br><br>
+    <button onclick="document.getElementById('decision-popup').style.display='none'">Close</button>
+</div>
+
+<script>
+function showDecisionPopup(){
+    document.getElementById('decision-popup').style.display='block';
+}
+</script>
+<script src="java.js"></script>
+</body>
+</html>
