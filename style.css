@@ -1,11 +1,30 @@
+/* 声音开关按钮：右下角悬浮 */
+#sound-toggle{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(0,0,0,.45);
+  color: #fff;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform .15s ease, background .2s ease;
+}
+#sound-toggle:hover{ transform: translateY(-1px); background: rgba(0,0,0,.6); }
+#sound-toggle.on::before{ content: "🔊 "; }
+#sound-toggle::before{ content: "🔇 "; }
 .floating-memory {
-    position: fixed; /* 固定在屏幕位置 */
+    position: fixed; 
     z-index: 10;
-    pointer-events: none; /* 不挡交互 */
+    pointer-events: none; 
     animation: sway 4s ease-in-out infinite;
 }
 
-/* 只在 transform 里加微晃，不要改变整体位置 */
+
 @keyframes sway {
     0%   { transform: translate(0px, 0px); }
     50%  { transform: translate(3px, 2px); } /* 左右 + 上下微晃 */
@@ -23,26 +42,26 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* 悬停时效果 */
+
 button:hover {
     background-color: #3b4f7a;
     transform: scale(1.05);
 }
-/* 视频外层容器，控制大小和比例 */
+
 .video-wrapper {
   position: relative;
-  width: 70%;          /* 页面宽度占比，调这里变小或变大 */
-  max-width: 900px;    /* 最大宽度限制 */
-  margin: 20px auto;   /* 上下留空 + 居中 */
-  aspect-ratio: 16/9;  /* 保持16:9比例 */
+  width: 70%;          
+  max-width: 900px;   
+  margin: 20px auto;  
+  aspect-ratio: 16/9;
 }
 
-/* 视频本身 */
+
 .video-wrapper video {
   width: 100%;
   height: 100%;
   display: block;
-  border-radius: 8px;  /* 圆角（可选） */
+  border-radius: 8px; 
 }
 .leak-audio {
     width: 300px;
@@ -54,8 +73,8 @@ button:hover {
   background-color: transparent;
   width: 600px;
   height: 700px;
-  perspective: 1000px; /* 控制3D视差 */
-  margin: 30px auto; /* 居中 */
+  perspective: 1000px; 
+  margin: 30px auto; 
   display: flex;
   align-items: center;
 }
