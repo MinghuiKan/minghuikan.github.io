@@ -138,8 +138,43 @@ References:
 </style>
 </head>
 <body>
-<audio id="bg-music" src="sound/222448__waveplaysfx__synth-pad-deep-ambience-with-beach-waves.mp3" autoplay loop></audio>
-<div id="click-hint">🔊 Click anywhere to start the music</div>
+
+<audio id="bgm"
+  src="sound/2224488_waveplaysfx_synth-pad-deep-ambience-with-beach-waves.mp3"
+  preload="auto" loop playsinline webkit-playsinline></audio>
+
+<div id="click-hint" style="
+  position:fixed;right:20px;bottom:20px;background:rgba(0,0,0,.6);
+  color:#fff;padding:8px 12px;border-radius:6px;font-size:14px;z-index:9999">
+  🔊 Click anywhere to start the music
+</div>
+
+<script>
+(function () {
+  const audio = document.getElementById('bgm');
+  const hint  = document.getElementById('click-hint');
+
+  function start() {
+
+    audio.volume = 0.6;
+    audio.play().then(() => {
+      hint.style.display = 'none';
+
+      ['pointerdown','click','touchstart'].forEach(t =>
+        document.removeEventListener(t, start, true)
+      );
+    }).catch(err => {
+      
+      console.log('Audio play failed:', err);
+    });
+  }
+
+  
+  ['pointerdown','click','touchstart'].forEach(t =>
+    document.addEventListener(t, start, true)
+  );
+})();
+</script>
 <header>
  
   <h1 class="main-title">Kara’s Memory Rebellion</h1>
