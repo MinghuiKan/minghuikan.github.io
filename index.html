@@ -119,27 +119,29 @@ References:
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
+   #click-hint {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    z-index: 9999;
+    animation: fadeIn 1s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 </style>
 </head>
 <body>
 <button id="enable-audio">Enable Sound</button>
 
-<audio id="bg-music"
-       src="sound/2224448_waveplaysfx_synth-pad-deep-ambience-with-beach-waves.mp3"
-       preload="auto" loop playsinline></audio>
-
-<script>
-  function startBgm(){
-    const a = document.getElementById('bg-music');
-    if (!a) return;
-    a.muted = false;
-    a.volume = 0.6;
-    a.play().catch(console.warn);
-  }
-  document.getElementById('enable-audio').addEventListener('click', startBgm);
-  document.addEventListener('click', startBgm, { once:true });
-  document.addEventListener('touchstart', startBgm, { once:true });
-</script>
+<audio id="bg-music" src="sound/222448__waveplaysfx__synth-pad-deep-ambience-with-beach-waves.mp3" autoplay loop></audio>
+<div id="click-hint">🔊 Click anywhere to start the music</div>
 
 <header>
  
