@@ -138,7 +138,6 @@ References:
 </style>
 </head>
 <body>
-
 <audio id="bgm"
   src="sound/2224488_waveplaysfx_synth-pad-deep-ambience-with-beach-waves.mp3"
   preload="auto" loop playsinline webkit-playsinline></audio>
@@ -150,42 +149,23 @@ References:
 </div>
 
 <script>
-(function () {
-  const audio = document.getElementById('bgm');
-  const hint  = document.getElementById('click-hint');
+const audio = document.getElementById('bgm');
+const hint  = document.getElementById('click-hint');
 
-  audio.volume = 0.6;
+function playMusic(){
   audio.muted = false;
-  audio.play().then(() => {
+  audio.volume = 0.6;
+  audio.play().then(()=> hint.style.display='none')
+               .catch(()=>{}); // 播放失败就不处理
+}
 
-    if (hint) hint.style.display = 'none';
-  }).catch(() => {
+// 页面加载后尝试播放
+playMusic();
 
-  });
-
-  function startMusic() {
-    audio.muted = false;
-    audio.volume = 0.6;
-    const p = audio.play();
-    if (p && typeof p.then === 'function') {
-      p.then(() => { if (hint) hint.style.display = 'none'; })
-       .catch(err => console.log('play blocked:', err));
-    }
-
-    window.removeEventListener('click', startMusic);
-    window.removeEventListener('touchstart', startMusic);
-  }
-
-
-  window.addEventListener('click', startMusic, { once: true });
-  window.addEventListener('touchstart', startMusic, { once: true });
-
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden && audio.paused) {
-      audio.play().catch(()=>{});
-    }
-  });
-})();
+// 如果被阻止，用户首次点击/触摸后播放
+['click','touchstart'].forEach(e =>
+  window.addEventListener(e, playMusic, { once:true })
+);
 </script>
 <header>
  
